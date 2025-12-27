@@ -1,0 +1,113 @@
+/* package cards stylising */
+.services{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 5em;
+    margin-left: 2em;
+}
+
+.package-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 24px;
+    background: rgba(203, 213, 225, 0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    color: #CBD5E1;
+    font-weight: 900;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.package-card h3{
+    color: #CBD5E1;
+    font-weight: 600;
+}
+
+.package-card:hover{
+    transform: scale(1.04) translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+}
+
+.package-card ul{
+    color: #a1a1aa;
+    display: flex;
+    flex-direction: column;
+    font-style:oblique;
+    font-size: 17px;
+    gap: 15px;
+    line-height: 1.6;
+}
+
+.package-card a{
+    background: transparent;
+    color: #cbd5e1;
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 12px 28px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.package-card a:hover{
+     background: #166534;
+     color: #ecfdf5;
+     border-color: #166534;
+     transform: scale(1.04);
+}
+
+.package-card h3{
+    font-weight: 800;
+}
+
+/* "mehr" sections */
+.more-container{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin-top: 5em;
+    gap: 20px;
+}
+
+.more{
+    background: rgba(30, 41, 59, 0.4);
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+.portfolio{
+     background: rgba(30, 41, 59, 0.4);
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+.more-container a:hover{
+    background-color: #5051528b;
+}
+
+@media (max-width: 768px) {
+    .services {
+        flex-direction: column; /* Карточки в колонку */
+        gap: 30px;              /* Четкий зазор между ними */
+        margin-left: 0;        /* Убираем смещение влево */
+        padding: 0 20px;       /* Добавляем отступы от краев экрана */
+        margin-top: 3em;       /* Немного уменьшим верхний отступ для мобилок */
+    }
+
+    .package-card {
+        width: 100%;           /* Чтобы карточки были одинаковой ширины */
+        max-width: 400px;      /* Ограничиваем, чтобы не были слишком растянуты */
+        padding: 24px;         /* Возвращаем нормальный паддинг (10px — это слишком мало) */
+        box-sizing: border-box; /* Чтобы паддинги не раздували ширину */
+    }
+}

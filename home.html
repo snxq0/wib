@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link id="favicon" rel="icon" href="/assets/favicon/WiB.png" />
+
+    <title>WiB</title>
+</head>
+
+<body>
+
+    
+
+    <header>
+        <nav>
+            <a href="./home.html" class="logo"><img src="assets/logo/logo.png" alt=""></a>
+            <a href="about.html" class="nav-btn">Über uns</a>
+            <a href="services.html" class="nav-btn">Dienstleistungen</a>
+            <a href="philosophy.html" class="nav-btn">Philosophie</a>
+            <a href="https://iv-bar.vercel.app/" class="nav-btn">Unsere Bar</a>
+        </nav>
+    </header>
+
+    <div id="typewriter">
+
+    </div>
+
+    <h1 style="color: #cbd5e1;">Herzlich Willkommen bei WiB!</h1>
+    <div class="scroll-down" onclick="scrollToNext()">
+    </div>
+
+    <div class="sections">
+         <!--Was wir anbieten-->
+    <p>
+Wir erstellen moderne, leistungsstarke und maßgeschneiderte Websites, die nicht nur gut aussehen,
+sondern auch echte Ergebnisse liefern. Unser Fokus liegt auf klarer Struktur, schneller Performance
+und einem benutzerfreundlichen Interface, das Besucher intuitiv durch die Seite führt.
+<br><br>
+Dabei achten wir besonders auf sauberen Code, Responsive Design und eine optimale Darstellung
+auf allen Endgeräten – vom Smartphone bis zum Desktop.
+</p>
+
+    <!--Unsere Einstellungen-->
+    <p>
+Wir stehen für eine transparente, ehrliche und langfristige Zusammenarbeit mit unseren Kunden.
+Jedes Projekt beginnt bei uns mit dem Verständnis für Ihre Ziele, Ihre Zielgruppe und Ihre Vision.
+<br><br>
+Uns ist wichtig, dass Sie sich während des gesamten Entwicklungsprozesses sicher, verstanden
+und gut betreut fühlen – von der ersten Idee bis zur finalen Umsetzung.
+</p>
+
+    <!--Warum wir?-->
+   <p>
+Unser Team verbindet technisches Know-how mit Leidenschaft für Design und digitale Lösungen.
+Wir übernehmen Verantwortung für jedes Projekt und behandeln die Wünsche unserer Kunden,
+als wären es unsere eigenen.
+<br><br>
+Respekt, Zuverlässigkeit und Freundlichkeit bilden die Grundlage unserer Arbeit, denn wir glauben,
+dass starke digitale Produkte nur durch starke Beziehungen entstehen.
+</p>
+
+    </div>
+    
+    <footer class="footer">
+
+        <div class="footer-inner">
+
+            <div class="footer-left">
+                &copy; 2025 WiB
+            </div>
+
+            <div class="footer-right">
+                 <a href="impressum.html">Impressum</a>
+                 <a href="datenschutz.html">Datenschutz</a>
+                 <a href="agb.html">AGB</a>
+                 <a href="contact.html">Kontakt</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/typewriter.js"></script>
+    <script>
+        function scrollToNext(){
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+    <script>
+  // ScrollReveal — появление абзацев при скролле
+  ScrollReveal().reveal('.sections p:nth-child(odd)', { 
+    origin: 'left', 
+    distance: '100px', 
+    duration: 1000, 
+    easing: 'ease-out',
+    interval: 200 // небольшая задержка между элементами
+  });
+
+  ScrollReveal().reveal('.sections p:nth-child(even)', { 
+    origin: 'right', 
+    distance: '100px', 
+    duration: 1000, 
+    easing: 'ease-out',
+    interval: 200
+  });
+
+  // GSAP — дополнительный "вау" эффект после появления
+  gsap.utils.toArray('.sections p').forEach((p, i) => {
+    p.addEventListener('mouseenter', () => {
+      gsap.to(p, {
+        scale: 1.05,       // лёгкое увеличение
+        color: "#facc15",  // цвет текста при наведении
+        duration: 0.3,
+        ease: "power1.out"
+      });
+    });
+    p.addEventListener('mouseleave', () => {
+      gsap.to(p, {
+        scale: 1,
+        color: "#a1a1aa",
+        duration: 0.3,
+        ease: "power1.out"
+      });
+    });
+  });
+</script>
+
+</body>
+
+</html>
